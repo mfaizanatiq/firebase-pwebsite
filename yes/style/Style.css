@@ -3,8 +3,8 @@
 }
 
 body {
-    background: url('../images/background.jpg') fixed;
-    background-size:cover;
+    background: url('../images/background@2x.jpg') no-repeat top right;
+    background-size:100%;
 }
 
 .main__logo {
@@ -13,10 +13,11 @@ body {
 }
 
 h1 {
-    color: #000;;
+    color: #221669;
     font-size: 45pt;
     line-height: 3rem;
     font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
 }
 
     h1 small {
@@ -33,15 +34,15 @@ h2 {
     margin-top: 0;
     font-size: 45pt;
     font-family: 'Montserrat', sans-serif;
-    
+    font-weight: bold;
     margin-bottom: 30px;
-    color:black;
+    color:#221669;
 }
 
 h3 {
     font-size: 30pt;
     font-family: 'Montserrat', sans-serif;
-    
+    font-weight: bold;
     line-height: 3rem;
     margin-bottom:50px;
 }
@@ -52,10 +53,12 @@ h3, h4 {
 
 p {
     /*font-size: 16pt;*/
-    font-size:2rem;
-    line-height: 2.8rem;
+	font-family: "Cario", sans-serif;
+    font-size:24pt;
+    line-height: 34pt;
     color: rgba(0,0,0,0.8);
-    font-weight: normal;
+    font-weight: lighter;
+	
 }
 
 .btn {
@@ -83,18 +86,22 @@ p {
     }
 
 section {
+	
     min-height: 100vh;
 }
 
     section#about {
-        background: white no-repeat fixed;
+       /* background: white no-repeat fixed;*/
       
        /* background: url('../images/Layer-2.jpg') no-repeat fixed;*/
-        background-size: cover;     
+        background-size: cover;    
+		padding-top:5%;
 
     }
     section#about .col-lg-7{
-        height:100%;padding-top: 20%;
+        height:100%;
+		padding-top: 20%;
+		
     }
     section#about *{
        
@@ -106,17 +113,32 @@ section {
     section#about p{
         font-size:18pt;
     }
-
+section#my-skills{
+	margin-top: 0%;
+	background:white;
+	min-height:50vh;
+}
+section#my-skills p{
+	font-size:17pt;
+}
     .social a{
 
 font-size:1.5rem;
     }
     .social .btn-default{
 min-width:10px;
-        border-radius:50px;
+        border-radius:0;
         color:black;
             }
-
+.social .btn-default:hover{
+	transition: all 0.3s ease-out;
+	background:#221669;
+	color:white;
+	
+}
+.social .btn-default:hover i{
+	color:white;
+}
 
             .cta-box{
                 background-color:black;
@@ -152,22 +174,35 @@ color:white;
             #imagecontainer{
                 height:100%;padding-top:25%;
             }
-
+.btn-ghost{
+	border:1px solid #221669;border-radius:25px;padding:10px;
+}
 @media screen and (max-width: 760px) {
+	#hero{
+    background: url('../images/background-mobile.jpg') no-repeat bottom right;
+    background-size:100%;
+		padding-top:20%;
+}
+	body{
+		background:none;
+	}
     h1 {
-        font-size:3rem;
+        font-size:34pt;
     }
-    h3{
-        line-height: 3rem;
+    h2{
+        font-size: 28pt;
     }
     h1 small {
         background: none;
         -webkit-background-clip: inherit;
         -webkit-text-fill-color: black;
     }
-
+	p{
+		font-size: 17pt;
+		line-height: 23pt;
+	}
     section {
-        padding-bottom:40px;
+        padding-bottom:20px;
     }
     .action-items .btn {
         margin-bottom: 20px;
@@ -181,5 +216,59 @@ color:white;
 #imagecontainer{
     height:50%;padding-top:0%;
 }
+	.main__logo{
+		margin-top:30px;
+		width:60%;
+	}
+	
+	.cta-box h3{
+		font-size:16pt;
+	}
+	.cta-box .btn-default{
+		padding:10px 40px;
+		
+	}
+	.btn-ghost{
+		width:100%;
+	}
+}
 
+
+
+/*Scroll*/
+
+.scroll-downs {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  
+  width :34px;
+  height: 55px;
+}
+.mousey {
+  width: 3px;
+  padding: 10px 15px;
+  height: 35px;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  opacity: 0.75;
+  box-sizing: content-box;
+}
+.scroller {
+  width: 3px;
+  height: 10px;
+  border-radius: 25%;
+  background-color: #fff;
+  animation-name: scroll;
+  animation-duration: 2.2s;
+  animation-timing-function: cubic-bezier(.15,.41,.69,.94);
+  animation-iteration-count: infinite;
+}
+@keyframes scroll {
+  0% { opacity: 0; }
+  10% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(15px); opacity: 0;}
 }
